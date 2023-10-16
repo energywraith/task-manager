@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./app.module.scss";
 import { RootState } from "./store";
-import { addTask, removeTask } from "./features/todo/todoSlice";
+import { addTask, removeTask } from "features/todo";
 
 function App() {
   const todoTasks = useSelector((state: RootState) => state.todo.value);

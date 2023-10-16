@@ -1,5 +1,7 @@
+import styles from "./app.module.scss";
+
 function App() {
-  return <div>TODO LIST</div>;
+  return <div className={styles.app}>TODO LIST</div>;
 }
 
 export default App;

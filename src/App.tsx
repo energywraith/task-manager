@@ -1,16 +1,25 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./app.module.scss";
 import { RootState } from "./store";
-import { increment } from "./features/counter/counterSlice";
+import { addTask, removeTask } from "./features/todo/todoSlice";
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.value);
+  const todoTasks = useSelector((state: RootState) => state.todo.value);
   const dispatch = useDispatch();
 
   return (
     <div className={styles.app}>
-      {count}
-      <button onClick={() => dispatch(increment())}>Increment</button>
+      <ul>
+        {todoTasks.map((todoTask) => (
+          <li key={todoTask.id}>{todoTask.name}</li>
+        ))}
+      </ul>
+      <button onClick={() => dispatch(addTask({ name: "Create TODO" }))}>
+        Add
+      </button>
+      <button onClick={() => dispatch(removeTask(todoTasks[0]?.id))}>
+        Remove
+      </button>
     </div>
   );
 }

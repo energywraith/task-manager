@@ -10,14 +10,14 @@ interface TodoGroupProps {
 
 const TodoGroup = ({ stage, tasks }: TodoGroupProps) => {
   return (
-    <>
+    <section className={styles["todo-group"]}>
       <h2>{stagesLabels[stage]}</h2>
       <StrictModeDroppable key={stage} droppableId={stage}>
         {(provided) => (
-          <section
+          <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className={styles["todo-group"]}
+            className={styles["todo-group__droppable"]}
           >
             <ul>
               {tasks.map((task, index) => {
@@ -32,10 +32,10 @@ const TodoGroup = ({ stage, tasks }: TodoGroupProps) => {
               })}
             </ul>
             {provided.placeholder}
-          </section>
+          </div>
         )}
       </StrictModeDroppable>
-    </>
+    </section>
   );
 };
 

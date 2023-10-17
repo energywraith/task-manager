@@ -8,6 +8,7 @@ import {
 } from "features/todo";
 import { Stage, stages } from "features/todo/stages";
 import { RootState } from "store";
+import styles from "./styles.module.scss";
 
 const Todo = () => {
   const tasks = useSelector((state: RootState) => state.todo.value);
@@ -29,7 +30,7 @@ const Todo = () => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Container>
+      <Container className={styles.todo}>
         {Object.keys(stages).map((stage) => (
           <TodoGroup
             key={stage}

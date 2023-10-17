@@ -11,6 +11,7 @@ import { RemoveIcon } from "components/icons";
 import { stages } from "features/todo/stages";
 import { Draggable } from "react-beautiful-dnd";
 import { Stage } from "features/todo/stages";
+import { DragIcon } from "components/icons/DragIcon";
 
 interface TodoTaskProps extends TodoTaskInterface {
   index: number;
@@ -47,6 +48,7 @@ const TodoTask = ({ id, name, date, stage, index }: TodoTaskProps) => {
           {...provided.dragHandleProps}
         >
           <li className={`${styles["todo-task"]} ${finishedClassname}`}>
+            <DragIcon className={styles["todo-task__drag-icon"]} />
             <InputCheckbox
               className={styles["todo-task__checkbox"]}
               checked={isFinished}

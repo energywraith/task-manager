@@ -1,5 +1,5 @@
-import { TodoTask, TodoTaskInterface } from "components/common/TodoTask";
 import { Stage, stagesLabels } from "features/todo/stages";
+import { TodoTask, TodoTaskInterface } from "./TodoTask";
 import { StrictModeDroppable } from "./StrictDropabble";
 import styles from "./styles.module.scss";
 
@@ -19,7 +19,7 @@ const TodoGroup = ({ stage, tasks }: TodoGroupProps) => {
             {...provided.droppableProps}
             className={styles["todo-group__droppable"]}
           >
-            <ul>
+            <ul className={styles["todo-group__list"]}>
               {tasks.map((task, index) => {
                 return (
                   <TodoTask

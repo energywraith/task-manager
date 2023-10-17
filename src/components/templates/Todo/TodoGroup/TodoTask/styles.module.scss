@@ -49,5 +49,7 @@
   &__action {
     font-size: 1.2rem;
     border-radius: 100%;
+    padding: 0;
+    color: color("accent", 900);
   }
 }

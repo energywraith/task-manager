@@ -1,0 +1,14 @@
+.todo-group {
+  display: flex;
+  flex-direction: column;
+
+  &__droppable {
+    margin-top: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+}

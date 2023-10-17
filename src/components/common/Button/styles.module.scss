@@ -8,11 +8,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 0 3px color("primary", 900);
+  column-gap: 0.4rem;
 
   &__icon {
     width: 1.5em;
     height: 1.5em;
-    color: color("accent", 900);
+    color: currentColor;
     stroke-width: 2px;
   }
 }

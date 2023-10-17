@@ -1,6 +1,7 @@
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { useDispatch, useSelector } from "react-redux";
-import { Container, TodoGroup } from "components/common";
+import { Container } from "components/common";
+import { TodoGroup } from "./TodoGroup";
 import {
   changeStage,
   changeOrderInStage,

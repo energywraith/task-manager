@@ -1,23 +1,15 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./store";
-import { addTask, removeTask } from "features/todo";
+import { useDispatch } from "react-redux";
+import { addTask } from "features/todo";
+import { Todo } from "components/templates";
 
 function App() {
-  const todoTasks = useSelector((state: RootState) => state.todo.value);
   const dispatch = useDispatch();
 
   return (
     <div>
-      <ul>
-        {todoTasks.map((todoTask) => (
-          <li key={todoTask.id}>{todoTask.name}</li>
-        ))}
-      </ul>
+      <Todo />
       <button onClick={() => dispatch(addTask({ name: "Create TODO" }))}>
         Add
-      </button>
-      <button onClick={() => dispatch(removeTask(todoTasks[0]?.id))}>
-        Remove
       </button>
     </div>
   );

@@ -1,19 +1,16 @@
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Container, TodoGroup } from "components/common";
 import {
-  TodoState,
   changeStage,
   changeOrderInStage,
   ChangeStageAction,
 } from "features/todo";
 import { Stage, stages } from "features/todo/stages";
+import { RootState } from "store";
 
-interface TodoProps {
-  tasks: TodoState;
-}
-
-const Todo = ({ tasks }: TodoProps) => {
+const Todo = () => {
+  const tasks = useSelector((state: RootState) => state.todo.value);
   const dispatch = useDispatch();
 
   const onDragEnd = (result: DropResult) => {
@@ -21,12 +18,12 @@ const Todo = ({ tasks }: TodoProps) => {
 
     if (!destination) return;
 
+    const dispatchProps = { source, destination } as ChangeStageAction;
+
     if (source.droppableId === destination.droppableId) {
-      dispatch(
-        changeOrderInStage({ source, destination } as ChangeStageAction)
-      );
+      dispatch(changeOrderInStage(dispatchProps));
     } else {
-      dispatch(changeStage({ source, destination } as ChangeStageAction));
+      dispatch(changeStage(dispatchProps));
     }
   };
 
@@ -37,7 +34,7 @@ const Todo = ({ tasks }: TodoProps) => {
           <TodoGroup
             key={stage}
             stage={stage as Stage}
-            tasks={tasks.value[stage as Stage]}
+            tasks={tasks[stage as Stage]}
           />
         ))}
       </Container>

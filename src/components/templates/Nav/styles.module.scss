@@ -21,14 +21,14 @@
 
   &__button {
     transition: background-color 300ms;
-    background: color("accent", 900);
-    color: color("secondary", 900);
+    background: color("secondary", 900);
+    color: color("primary", 900);
     font-size: 1.2rem;
     padding: 0.2rem;
     border-radius: 100%;
 
     &:hover {
-      background: rgba(color("accent", 900), 0.8);
+      background: rgba(color("secondary", 900), 0.7);
     }
   }
 }

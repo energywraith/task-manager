@@ -57,7 +57,7 @@ const TodoTask = ({ id, name, date, stage, index }: TodoTaskProps) => {
             <ul className={styles["todo-task__actions"]}>
               <li>
                 <Button
-                  onClick={() => dispatch(removeTask(id))}
+                  onClick={() => dispatch(removeTask({ id, stage }))}
                   Icon={RemoveIcon}
                   className={styles["todo-task__action"]}
                 />

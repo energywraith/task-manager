@@ -23,3 +23,8 @@ export interface ChangeStageAction {
   source: { index: number; droppableId: Stage };
   destination: { index: number; droppableId: Stage };
 }
+
+export interface RemoveTaskAction {
+  id: TodoTask["id"];
+  stage: Stage;
+}

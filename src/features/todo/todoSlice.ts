@@ -1,6 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
-import { ChangeStageAction, TodoState, TodoTask, TodoTaskDraft } from "./types";
+import {
+  ChangeStageAction,
+  RemoveTaskAction,
+  TodoState,
+  TodoTaskDraft,
+} from "./types";
 
 export const todoInitialState: TodoState = {
   value: {
@@ -21,9 +26,11 @@ export const todoSlice = createSlice({
         ...action.payload,
       });
     },
-    removeTask: (state, action: PayloadAction<TodoTask["id"]>) => {
-      state.value.TODO = state.value.TODO.filter(
-        (todoTask) => todoTask.id !== action.payload
+    removeTask: (state, action: PayloadAction<RemoveTaskAction>) => {
+      const { id, stage } = action.payload;
+
+      state.value[stage] = state.value[stage].filter(
+        (todoTask) => todoTask.id !== id
       );
     },
     changeOrderInStage: (state, action: PayloadAction<ChangeStageAction>) => {

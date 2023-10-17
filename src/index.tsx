@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./store";
 
+import "typeface-roboto";
 import "styles/globals.scss";
 
 const root = ReactDOM.createRoot(

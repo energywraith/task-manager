@@ -1,0 +1,34 @@
+@import "styles/mixins";
+
+.nav {
+  height: 2rem;
+  background: color("primary", 900);
+  color: color("secondary", 900);
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__button {
+    transition: background-color 300ms;
+    background: color("accent", 900);
+    color: color("secondary", 900);
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    border-radius: 100%;
+
+    &:hover {
+      background: rgba(color("accent", 900), 0.8);
+    }
+  }
+}

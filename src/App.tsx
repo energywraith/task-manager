@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./app.module.scss";
 import { RootState } from "./store";
 import { addTask, removeTask } from "features/todo";
 
@@ -8,7 +7,7 @@ function App() {
   const dispatch = useDispatch();
 
   return (
-    <div className={styles.app}>
+    <div>
       <ul>
         {todoTasks.map((todoTask) => (
           <li key={todoTask.id}>{todoTask.name}</li>

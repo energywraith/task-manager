@@ -1,0 +1,6 @@
+@use "sass:map";
+@import "./palette";
+
+@function color($color, $shade) {
+  @return map.get(map.get($colors, $color), $shade);
+}

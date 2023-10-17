@@ -6,8 +6,9 @@ export interface TodoTask {
   date: string;
 }
 
-export type TodoTaskDraft = Omit<TodoTask, "id" | "date">;
-
+export interface TodoTaskDraft extends TodoTask {
+  stage: Stage;
+}
 export interface TodoTaskStage {
   id: string;
   data: TodoTask[];

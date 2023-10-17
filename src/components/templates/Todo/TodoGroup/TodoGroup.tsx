@@ -1,5 +1,6 @@
-import { Stage, stagesLabels } from "features/todo/stages";
+import { Stage, stages, stagesLabels } from "features/todo/stages";
 import { TodoTask, TodoTaskInterface } from "./TodoTask";
+import { TodoAdd } from "./TodoAdd";
 import { StrictModeDroppable } from "./StrictDropabble";
 import styles from "./styles.module.scss";
 
@@ -35,6 +36,7 @@ const TodoGroup = ({ stage, tasks }: TodoGroupProps) => {
           </div>
         )}
       </StrictModeDroppable>
+      {stage !== stages.DONE && <TodoAdd stage={stage} />}
     </section>
   );
 };

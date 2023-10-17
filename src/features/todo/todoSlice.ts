@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
 import {
   ChangeStageAction,
   RemoveTaskAction,
@@ -20,11 +19,9 @@ export const todoSlice = createSlice({
   initialState: todoInitialState,
   reducers: {
     addTask: (state, action: PayloadAction<TodoTaskDraft>) => {
-      state.value.TODO.push({
-        id: uuidv4(),
-        date: new Date().toLocaleString(),
-        ...action.payload,
-      });
+      const { stage, ...task } = action.payload;
+
+      state.value[stage] = [task, ...state.value[stage]];
     },
     removeTask: (state, action: PayloadAction<RemoveTaskAction>) => {
       const { id, stage } = action.payload;

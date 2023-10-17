@@ -1,13 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { todoReducer } from "features/todo";
+import { todoInitialState, todoReducer } from "features/todo";
 import { listenerMiddleware } from "./middleware";
 
 const todoPersistedState = JSON.parse(localStorage.getItem("todo") || "null");
-const isPersistedStateValid = Array.isArray(todoPersistedState?.value);
 
 export const store = configureStore({
   preloadedState: {
-    todo: isPersistedStateValid ? todoPersistedState : { value: [] },
+    todo: todoPersistedState !== null ? todoPersistedState : todoInitialState,
   },
   reducer: {
     todo: todoReducer,

@@ -1,0 +1,18 @@
+@import "styles/mixins";
+
+.button {
+  border: 0;
+  background: color("secondary", 900);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__icon {
+    width: 1.5em;
+    height: 1.5em;
+    color: color("accent", 900);
+    stroke-width: 2px;
+  }
+}

@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 import { TodoState, TodoTask, TodoTaskDraft } from "./types";
+import { stages } from "./stages";
 
 const initialState: TodoState = {
   value: [],
@@ -14,7 +15,8 @@ export const todoSlice = createSlice({
       state.value.push({
         id: uuidv4(),
         isFinished: false,
-        date: new Date().toISOString(),
+        date: new Date().toLocaleString(),
+        stage: stages.TODO,
         ...action.payload,
       });
     },
@@ -29,7 +31,7 @@ export const todoSlice = createSlice({
 
         return {
           ...todoTask,
-          isFinished: !todoTask.isFinished,
+          stage: todoTask.stage === stages.DONE ? stages.TODO : stages.DONE,
         };
       });
     },

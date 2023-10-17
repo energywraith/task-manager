@@ -16,6 +16,7 @@
     background: color("accent", 900);
     box-shadow: 0 0 3px color("accent", 900);
     color: color("secondary", 900);
+    transition: box-shadow 300ms;
 
     &:hover {
       box-shadow: 0 0 9px color("accent", 900);

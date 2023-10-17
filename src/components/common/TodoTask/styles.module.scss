@@ -16,6 +16,12 @@
   cursor: grab;
 
   &--finished {
+    transition: filter 300ms;
+    filter: brightness(0.6);
+
+    &:hover {
+      filter: brightness(1);
+    }
   }
 
   &__checkbox {

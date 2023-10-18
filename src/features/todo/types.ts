@@ -9,6 +9,7 @@ export interface TodoTask {
 export interface TodoTaskDraft extends TodoTask {
   stage: Stage;
 }
+
 export interface TodoTaskStage {
   id: string;
   data: TodoTask[];

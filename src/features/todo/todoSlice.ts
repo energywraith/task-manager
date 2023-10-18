@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 import {
   ChangeStageAction,
   RemoveTaskAction,
@@ -8,8 +9,20 @@ import {
 
 export const todoInitialState: TodoState = {
   value: {
-    IN_PROGRESS: [],
-    TODO: [],
+    IN_PROGRESS: [
+      {
+        id: uuidv4(),
+        name: "Do the laundry",
+        date: new Date().toLocaleString(),
+      },
+    ],
+    TODO: [
+      {
+        id: uuidv4(),
+        name: "Cook lunch",
+        date: new Date().toLocaleString(),
+      },
+    ],
     DONE: [],
   },
 };

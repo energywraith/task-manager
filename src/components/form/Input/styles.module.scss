@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.input {
+  padding: 0 1rem;
+  border: none;
+  background: rgba(color("accent", 900), 0.8);
+  color: color("secondary", 900);
+  font-weight: bold;
+  box-shadow: 0 0 3px color("accent", 900);
+
+  &::placeholder {
+    color: rgba(color("secondary", 900), 0.7);
+  }
+}

@@ -20,6 +20,15 @@
     &:hover {
       box-shadow: 0 0 9px color("accent", 900);
     }
+
+    &--close {
+      background: color("primary", 900);
+      box-shadow: 0 0 3px color("primary", 900);
+
+      &:hover {
+        box-shadow: 0 0 6px color("primary", 900);
+      }
+    }
   }
 
   &.with-input {

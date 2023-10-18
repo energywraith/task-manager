@@ -1,8 +1,9 @@
 import { Button } from "components/common";
-import { PlusIcon } from "components/icons";
+import { PlusIcon, RemoveIcon } from "components/icons";
 import styles from "./styles.module.scss";
 import { SyntheticEvent, useState } from "react";
 import { UseFormProps, useForm } from "./useForm";
+import { Input } from "components/form/Input";
 
 const TodoAdd = ({ stage }: UseFormProps) => {
   const { name, onNameChange, onSubmit } = useForm({ stage });
@@ -20,12 +21,16 @@ const TodoAdd = ({ stage }: UseFormProps) => {
     setShowInput(false);
   };
 
-  const onButtonClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+  const onAddButtonClick = (e: SyntheticEvent<HTMLButtonElement>) => {
     if (!showInput) {
       e.preventDefault();
       setShowInput(true);
       return;
     }
+  };
+
+  const onCloseButtonClick = () => {
+    setShowInput(false);
   };
 
   return (
@@ -36,9 +41,10 @@ const TodoAdd = ({ stage }: UseFormProps) => {
       }`}
     >
       {showInput && (
-        <input
+        <Input
           type="text"
           name="name"
+          placeholder="What do you need to do?"
           value={name}
           onChange={onNameChange}
           minLength={0}
@@ -50,8 +56,15 @@ const TodoAdd = ({ stage }: UseFormProps) => {
       <Button
         className={styles["todo-new__button"]}
         Icon={PlusIcon}
-        onClick={onButtonClick}
+        onClick={onAddButtonClick}
       />
+      {showInput && (
+        <Button
+          className={`${styles["todo-new__button"]} ${styles["todo-new__button--close"]}`}
+          Icon={RemoveIcon}
+          onClick={onCloseButtonClick}
+        />
+      )}
     </form>
   );
 };

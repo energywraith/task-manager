@@ -13,8 +13,8 @@ export const useForm = ({ stage }: UseFormProps) => {
 
   const [name, setName] = useState<string>("");
 
-  const onNameChange = (e: SyntheticEvent<HTMLInputElement>) => {
-    setName(e.currentTarget.value);
+  const onNameChange = (inputName: string) => {
+    setName(inputName);
   };
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {

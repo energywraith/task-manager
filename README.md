@@ -4,7 +4,20 @@ This is a simple task manager application built using React, Redux, SCSS, and fo
 
 This project is currently hosted on Vercel. You can access it at [todo-list-energywraith.vercel.app](https://todo-list-energywraith.vercel.app/).
 
-![Preview](public/preview.png)
+## Technologies Used
+
+- **TypeScript**: A typed superset of JavaScript that enhances the development experience and catches common programming mistakes.
+
+- **React (Create React App)**: A popular JavaScript library for building user interfaces, scaffolded with Create React App for a streamlined development setup.
+
+- **Redux Toolkit**: A set of utility functions for Redux, simplifying the process of writing efficient and maintainable Redux code.
+
+- **React-Beautiful-DND**: A library for implementing drag-and-drop interactions in React applications, enhancing user experience.
+
+- **SCSS**: A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+
+- **Jest**: A widely-used JavaScript testing framework, known for its simplicity and speed.
+
 
 ## Additional Features
 
@@ -33,3 +46,7 @@ This project is currently hosted on Vercel. You can access it at [todo-list-ener
     ```
 
 4. Open your browser and go to http://localhost:3000 to view the app.
+
+## Preview
+
+![Preview](public/preview.png)

@@ -1,11 +1,9 @@
 import { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import { addTask } from "features/todo";
-import { Stage } from "features/todo/stages";
+import { addTask, getTodoTaskDraft, Stage } from "features/todo";
 
 export interface UseFormProps {
-  stage: Stage;
+  stage?: Stage;
 }
 
 export const useForm = ({ stage }: UseFormProps) => {
@@ -20,14 +18,7 @@ export const useForm = ({ stage }: UseFormProps) => {
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    dispatch(
-      addTask({
-        id: uuidv4(),
-        date: new Date().toLocaleString(),
-        name,
-        stage,
-      })
-    );
+    dispatch(addTask(getTodoTaskDraft({ name, stage })));
 
     setName("");
   };

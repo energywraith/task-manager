@@ -6,8 +6,9 @@ import {
   changeStage,
   changeOrderInStage,
   ChangeStageAction,
+  Stage,
+  stages,
 } from "features/todo";
-import { Stage, stages } from "features/todo/stages";
 import { RootState } from "store";
 import styles from "./styles.module.scss";
 

@@ -9,5 +9,3 @@ export const stagesLabels = {
   TODO: "To Do",
   DONE: "Done",
 } as const;
-
-export type Stage = keyof typeof stages;

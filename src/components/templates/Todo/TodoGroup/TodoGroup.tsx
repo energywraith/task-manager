@@ -1,4 +1,4 @@
-import { Stage, stages, stagesLabels } from "features/todo/stages";
+import { Stage, stages, stagesLabels } from "features/todo";
 import { TodoTask, TodoTaskInterface } from "./TodoTask";
 import { TodoAdd } from "./TodoAdd";
 import { StrictModeDroppable } from "./StrictDropabble";

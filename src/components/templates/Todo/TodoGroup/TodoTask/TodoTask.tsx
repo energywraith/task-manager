@@ -3,14 +3,14 @@ import {
   TodoTask as TodoTaskInterface,
   changeStage,
   removeTask,
+  Stage,
+  stages,
 } from "features/todo";
 import { InputCheckbox } from "components/form";
 import styles from "./styles.module.scss";
 import { Button } from "components/common";
 import { RemoveIcon } from "components/icons";
-import { stages } from "features/todo/stages";
 import { Draggable } from "react-beautiful-dnd";
-import { Stage } from "features/todo/stages";
 import { DragIcon } from "components/icons/DragIcon";
 
 interface TodoTaskProps extends TodoTaskInterface {

@@ -1,31 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
 import {
   ChangeStageAction,
   RemoveTaskAction,
   TodoState,
   TodoTaskDraft,
 } from "./types";
+import { stages } from "./consts";
+import { getTodoInitialState } from "./helpers";
 
-export const todoInitialState: TodoState = {
-  value: {
-    IN_PROGRESS: [
-      {
-        id: uuidv4(),
-        name: "Do the laundry",
-        date: new Date().toLocaleString(),
-      },
-    ],
-    TODO: [
-      {
-        id: uuidv4(),
-        name: "Cook lunch",
-        date: new Date().toLocaleString(),
-      },
-    ],
-    DONE: [],
-  },
-};
+export const todoInitialState: TodoState = getTodoInitialState();
 
 export const todoSlice = createSlice({
   name: "todo",
@@ -34,7 +17,12 @@ export const todoSlice = createSlice({
     addTask: (state, action: PayloadAction<TodoTaskDraft>) => {
       const { stage, ...task } = action.payload;
 
-      state.value[stage] = [task, ...state.value[stage]];
+      const defaultStage = stages.TODO;
+
+      state.value[stage || defaultStage] = [
+        task,
+        ...state.value[stage || defaultStage],
+      ];
     },
     removeTask: (state, action: PayloadAction<RemoveTaskAction>) => {
       const { id, stage } = action.payload;

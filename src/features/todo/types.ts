@@ -1,4 +1,6 @@
-import { Stage } from "./stages";
+import { stages } from "./consts";
+
+export type Stage = keyof typeof stages;
 
 export interface TodoTask {
   id: string;
@@ -7,7 +9,7 @@ export interface TodoTask {
 }
 
 export interface TodoTaskDraft extends TodoTask {
-  stage: Stage;
+  stage?: Stage;
 }
 
 export interface TodoTaskStage {

@@ -12,11 +12,6 @@ export interface TodoTaskDraft extends TodoTask {
   stage?: Stage;
 }
 
-export interface TodoTaskStage {
-  id: string;
-  data: TodoTask[];
-}
-
 export interface TodoState {
   value: {
     [K in Stage]: TodoTask[];

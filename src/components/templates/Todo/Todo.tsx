@@ -1,7 +1,7 @@
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
 import { Container } from "components/common";
-import { TodoGroup } from "./TodoGroup";
 import {
   changeStage,
   changeOrderInStage,
@@ -9,8 +9,8 @@ import {
   Stage,
   stages,
 } from "features/todo";
-import { RootState } from "store";
 import styles from "./styles.module.scss";
+import { TodoGroup } from "./TodoGroup";
 
 const Todo = () => {
   const tasks = useSelector((state: RootState) => state.todo.value);

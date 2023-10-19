@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Button } from "./Button";
-import { DragIcon } from "components/icons/DragIcon";
+import { DragIcon } from "components/icons";
 
 test("Button should have TextContent equal to Children", async () => {
   const mockTextContent = "Children";

@@ -1,9 +1,9 @@
+import { SyntheticEvent, useState } from "react";
 import { Button } from "components/common";
 import { PlusIcon, RemoveIcon } from "components/icons";
-import styles from "./styles.module.scss";
-import { SyntheticEvent, useState } from "react";
+import { Input } from "components/form";
 import { UseFormProps, useForm } from "./useForm";
-import { Input } from "components/form/Input";
+import styles from "./styles.module.scss";
 
 const TodoAdd = ({ stage }: UseFormProps) => {
   const { name, onNameChange, onSubmit } = useForm({ stage });

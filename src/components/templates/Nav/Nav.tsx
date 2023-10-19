@@ -1,6 +1,6 @@
 import { Button, Container } from "components/common";
 import styles from "./styles.module.scss";
-import { GithubIcon } from "components/icons/GithubIcon";
+import { GithubIcon } from "components/icons";
 
 const Nav = () => {
   return (

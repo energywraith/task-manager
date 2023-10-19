@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { Draggable } from "react-beautiful-dnd";
 import {
   TodoTask as TodoTaskInterface,
   changeStage,
@@ -7,11 +8,9 @@ import {
   stages,
 } from "features/todo";
 import { InputCheckbox } from "components/form";
-import styles from "./styles.module.scss";
 import { Button } from "components/common";
-import { RemoveIcon } from "components/icons";
-import { Draggable } from "react-beautiful-dnd";
-import { DragIcon } from "components/icons/DragIcon";
+import { RemoveIcon, DragIcon } from "components/icons";
+import styles from "./styles.module.scss";
 
 interface TodoTaskProps extends TodoTaskInterface {
   index: number;

@@ -11,7 +11,7 @@ export const getTodoTaskDraft = ({
   id: uuidv4(),
   date: new Date().toLocaleString(),
   name,
-  stage,
+  ...(stage ? { stage } : {}),
 });
 
 export const getTodoInitialState = () => ({

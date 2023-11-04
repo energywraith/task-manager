@@ -2,7 +2,7 @@
 
 This is a simple task manager application built using React, Redux, SCSS, and focusing on a creative UX/UI approach.
 
-This project is currently hosted on Vercel. You can access it at [todo-list-energywraith.vercel.app](https://todo-list-energywraith.vercel.app/).
+This project is currently hosted on Vercel. You can access it at [task-manager-energywraith.vercel.app](https://task-manager-energywraith.vercel.app/).
 
 ## Technologies Used
 
